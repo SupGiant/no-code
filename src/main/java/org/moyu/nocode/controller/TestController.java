@@ -1,12 +1,9 @@
 package org.moyu.nocode.controller;
 
-import ch.qos.logback.core.testUtil.RandomUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.moyu.nocode.entity.User;
-import org.moyu.nocode.repository.UserRepository;
-import org.moyu.nocode.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.moyu.nocode.entity.SystemUser;
+import org.moyu.nocode.repository.SystemUserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,32 +11,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
-    @Autowired
-    private UserService userService;
+    private final SystemUserRepository systemUserRepository;
 
-    private final UserRepository userRepository;
-
-    public TestController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public TestController(SystemUserRepository systemUserRepository) {
+        this.systemUserRepository = systemUserRepository;
     }
 
 
     @GetMapping("/test")
     String test() throws JsonProcessingException {
-        User user = userRepository.findAll().get(0);
+        SystemUser systemUser = systemUserRepository.findAll().get(0);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        return objectMapper.writeValueAsString(user);
+        return objectMapper.writeValueAsString(systemUser);
     }
 
 
     @GetMapping("/test2")
     String test2() throws JsonProcessingException {
-        User user = new User();
-        user.setUserName("test");
-        user.setPassWord("test");
-        User save = userRepository.save(user);
+        SystemUser systemUser = new SystemUser();
+        systemUser.setUserName("test");
+        systemUser.setPassWord("test");
+        SystemUser save = systemUserRepository.save(systemUser);
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(save);
     }
@@ -48,19 +42,19 @@ public class TestController {
     @GetMapping("/test3")
     String test3() throws JsonProcessingException {
         PageRequest pageRequest = PageRequest.of(0, 10);
-        Page<User> all = userRepository.findAll(pageRequest);
+        Page<SystemUser> all = systemUserRepository.findAll(pageRequest);
         return new ObjectMapper().writeValueAsString(all);
     }
 
     @GetMapping("/test4")
     String test4() {
-        long count = userRepository.count();
+        long count = systemUserRepository.count();
         return String.valueOf(count);
     }
 
     @GetMapping("/test5")
     String test5() throws JsonProcessingException {
-        User user = userRepository.count2();
-        return new ObjectMapper().writeValueAsString(user);
+        SystemUser systemUser = systemUserRepository.count2();
+        return new ObjectMapper().writeValueAsString(systemUser);
     }
 }
