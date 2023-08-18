@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.moyu</groupId>
+        <artifactId>moyu-module-system</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>moyu-module-system-biz</artifactId>
+
+    <dependencies>
+        <!--依赖上级api-->
+        <dependency>
+            <groupId>org.moyu</groupId>
+            <artifactId>moyu-module-system-api</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!--spring 核心模块-->
+        <!--web相关-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--引入security-->
+        <dependency>
+            <groupId>org.moyu</groupId>
+            <artifactId>moyu-spring-boot-starter-security</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!--引入spring data jpa-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!--对象映射-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+        </dependency>
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+
+        <!--通用模块-->
+        <dependency>
+            <groupId>org.moyu</groupId>
+            <artifactId>moyu-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

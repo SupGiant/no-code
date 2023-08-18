@@ -1,5 +1,18 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: nocode
+    url: jdbc:mysql://10.18.21.201:3306/nocode?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true
+    username: root
     password: 123456
+#jpa显示sql
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+
+###### moyu 模块自定义参数
+moyu:
+  info:
+    base-package: org.moyu
+
+

@@ -12,6 +12,13 @@
     <packaging>pom</packaging>
     <artifactId>moyu-framework</artifactId>
 
+
+    <name>${project.artifactId}</name>
+
+    <modules>
+        <module>moyu-spring-boot-starter-security</module>
+    </modules>
+
     <description>
         该包是技术组件，每个子包，代表一个组件。每个组件包括两部分：
         1. core 包：是该组件的核心封装
