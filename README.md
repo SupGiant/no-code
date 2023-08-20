@@ -3,3 +3,4 @@
 - Spring Boot 3.1.2
 - Spring Data JPA 3.1.2
 - Spring Security 3.1.2
+- knife4j 4.0.3
