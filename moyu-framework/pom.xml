@@ -17,6 +17,7 @@
 
     <modules>
         <module>moyu-spring-boot-starter-security</module>
+        <module>moyu-spring-boot-starter-web</module>
     </modules>
 
     <description>

@@ -21,9 +21,14 @@
 
         <!--spring 核心模块-->
         <!--web相关-->
+        <!--<dependency>-->
+        <!--    <groupId>org.springframework.boot</groupId>-->
+        <!--    <artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.moyu</groupId>
+            <artifactId>moyu-spring-boot-starter-web</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <!--引入security-->
